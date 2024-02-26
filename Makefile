@@ -18,10 +18,10 @@ coverage:
 	pytest --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests
 
 publish:
-	pip install 'twine>=1.5.0'
+	# pip install 'twine>=1.5.0'
 	python setup.py sdist bdist_wheel
-	twine upload dist/*
-	rm -fr build dist .egg requests.egg-info
+	# twine upload dist/*
+	# rm -fr build dist .egg requests.egg-info
 
 docs:
 	cd docs && make html

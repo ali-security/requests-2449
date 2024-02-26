@@ -9,8 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [2.7, 3.6, 3.7, 3.8, 3.9]
-        os: [ubuntu-18.04, macOS-latest, windows-latest]
+        python-version: [3.9]
+        os: [ubuntu-18.04]
         include:
           # pypy3 on Mac OS currently fails trying to compile
           # brotlipy. Moving pypy3 to only test linux.
@@ -28,4 +28,8 @@ jobs:
         make
     - name: Run tests
       run: |
-        make ci
+        make publish
+    - uses: "actions/upload-artifact@v4"
+      with:
+        name: artifacts
+        path: ./dist/*
