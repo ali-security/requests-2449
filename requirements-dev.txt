@@ -6,3 +6,4 @@ httpbin==0.7.0
 Flask==1.1.3
 trustme==0.8.0
 wheel==0.29.0
+markupsafe==2.0.1
